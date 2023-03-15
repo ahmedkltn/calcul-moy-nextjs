@@ -10,16 +10,15 @@ export default ({sectionSelected} : Props) => {
   const years: string[] = ["Première année", "Deuxieme année", "Troisième année"];
   // filter sections and get the desired section 
   // getting the first element from the array which is the wanted section and get branches
-  const sectionFiltered = sections.filter(section => section.section == sectionSelected)[0].branches
-  console.log(sectionFiltered)
+  const brancheSelected = sections.filter(section => section.section == sectionSelected)[0].branches
   return (
     <Container fluid>
-      <h1 className={"display-4 p-2 " + styles.ds}>Bussiness Computing :</h1>
+      <h1 className={"display-4 p-2 " + styles.ds}>Licence {sectionSelected} : </h1>
       <Row className="justify-content-md-center">
-        {sectionFiltered.map((branche, i) => {
+        {years.map((year, i) => {
           return (
             <Col xs lg="3" sm="12" className="m-2" key={i}>
-              <Section year={years[i]} branche={branche} />
+              <Section year={year} section={sectionSelected} branches={brancheSelected}/>
             </Col>
           );
         })}

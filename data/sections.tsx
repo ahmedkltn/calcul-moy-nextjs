@@ -15,12 +15,16 @@ export const sections: Section[] = [
   {
     id: 1,
     section: "Computer Science",
-    branches: ["Tronc commun", "Génie Logiciel", "Informatique et Multimédia"],
+    branches: [
+      "Tronc commun",
+      "Génie Logiciel et Système d'info",
+      "Informatique et Multimédia",
+    ],
     abbr: "LCS",
   },
   {
     id: 2,
-    section: "computer Engineering",
+    section: "Computer Engineering",
     branches: [
       "Tronc commun",
       "Ingénierie des réseaux et système",
