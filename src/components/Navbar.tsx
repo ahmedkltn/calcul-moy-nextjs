@@ -2,13 +2,11 @@ import { Container, Navbar , Nav } from "react-bootstrap";
 import styles from "../styles/Navbar.module.css";
 import { sections } from "../../data/sections";
 import Link from "next/link";
+import Image from "next/image";
 export default () => {
   return (
     <Navbar bg="dark" variant="dark" className={styles.navbar} expand="md">
       <Container>
-        <Link href="/" passHref legacyBehavior>
-          <Navbar.Brand>Calcul Moyenne</Navbar.Brand>
-        </Link>
         <Nav className="me-auto">
           {sections.map((section) => {
             return (

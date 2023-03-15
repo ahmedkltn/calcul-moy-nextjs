@@ -3,13 +3,14 @@ import Image from "next/image";
 export default () =>{
     return (
       <div className={"text-center mt-4"}>
-        <h1 className={styles.text}>Welcome !</h1>
+        <h1 className={styles.text}>Bienvenue !</h1>
         <p className={styles.text}>
-          This application has been specifically designed to help ISIMA students calculate
-          their grades easily and efficiently through a user-friendly interface, as the
-          university does not provide an average grade calculation. The main objective of
-          this app is to simplify the process of calculating grades for the students.
-          <br></br>This project was made by : <b>Ahmed klabi</b>
+          Cette application a été spécialement conçue pour aider les étudiants de l'ISIMA
+          à calculer facilement et efficacement leurs notes grâce à une interface
+          conviviale, car l'université ne fournit pas de calcul de note moyenne.
+          L'objectif principal de cette application est de simplifier le processus de
+          calcul des notes pour les étudiants.
+          <br></br>Ce projet a été réalisé par : <b>Ahmed klabi</b>
         </p>
         <a href="https://github.com/ahmedkltn">
           <Image className="m-2" src="/github.png" alt="github" width={50} height={50} />
