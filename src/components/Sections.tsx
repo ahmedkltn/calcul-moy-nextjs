@@ -17,7 +17,7 @@ export default ({sectionSelected} : Props) => {
       <Row className="justify-content-md-center">
         {years.map((year, i) => {
           return (
-            <Col xs lg="3" sm="12" className="m-2" key={i}>
+            <Col xs={12} lg={3} sm={8} className="m-2" key={i}>
               <Section year={year} section={sectionSelected} branches={brancheSelected}/>
             </Col>
           );

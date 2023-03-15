@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="md">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Nav className="me-auto">
           {sections.map((section) => {

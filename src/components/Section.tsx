@@ -14,7 +14,7 @@ export default ({year,section,branches} :Props) =>{
   }
     return (
       <>
-        <Card bg="dark" text="white" className="text-center " style={{height:"18rem"}}>
+        <Card bg="dark" text="white" className="text-center " style={{minHeight:"17rem"}}>
           <Card.Header className="display-6">{year}</Card.Header>
           <Card.Body>
             <Card.Text className="p-4">
