@@ -4,7 +4,7 @@ import { Row ,Container, Col} from "react-bootstrap"
 export default () => {
     return (
       <>
-        <Sections />
+        <Sections sectionSelected="Business Computing" />
       </>
     );
 }
