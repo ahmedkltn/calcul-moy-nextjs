@@ -4,17 +4,20 @@ import Link from "next/link";
 import Image from "next/image";
 export default () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container>
-        <Nav className="me-auto">
-          {sections.map((section) => {
-            return (
-              <Link key={section.id} href={"/" + section.abbr} passHref legacyBehavior>
-                <Nav.Link>{section.section}</Nav.Link>
-              </Link>
-            );
-          })}
-        </Nav>
+    <Navbar bg="dark" variant="dark" expand="md">
+      <Container fluid>
+        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Collapse id="navbar-nav">
+          <Nav className="me-auto">
+            {sections.map((section) => {
+              return (
+                <Link key={section.id} href={"/" + section.abbr} passHref legacyBehavior>
+                  <Nav.Link>{section.section}</Nav.Link>
+                </Link>
+              );
+            })}
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
