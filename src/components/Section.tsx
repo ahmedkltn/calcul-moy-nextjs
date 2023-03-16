@@ -1,30 +1,51 @@
-import { Card, Button} from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import styles from "../styles/Section.module.css";
+import Link from "next/link";
+
+// Define the props interface
 interface Props {
   year: string;
   section: string;
   branches: string[];
+  y: string;
+  abbr: string;
 }
-export default ({year,section,branches} :Props) =>{
-  let branche : string ;
-  if(year == "Première année"){
-    branche = branches[0]
-  }else{
-    branche = branches.slice(1,branches.length).join(" & ")
+
+// Define the component function
+export default ({ year, section, branches, y, abbr }: Props) => {
+  let branche: string;
+
+  // Determine the branch based on the year
+  if (year == "Première année") {
+    branche = branches[0].split(" ").join("-");
+  } else {
+    branche = branches.slice(1, branches.length).join("/");
   }
-    return (
-      <>
-        <Card bg="dark" text="white" className="text-center " style={{minHeight:"17rem"}}>
-          <Card.Header className="display-6">{year}</Card.Header>
-          <Card.Body>
-            <Card.Text className="p-4">
-              Calculer moyenne {year} <br /> {branche}
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
+
+  // Return the JSX for the component
+  return (
+    <>
+      {/* Render a Card component with Bootstrap styling */}
+      <Card
+        bg="dark"
+        text="white"
+        className="text-center "
+        style={{ minHeight: "17rem" }}
+      >
+        <Card.Header className="display-6">{year}</Card.Header>
+        <Card.Body>
+          {/* Display the branch and year */}
+          <Card.Text className="p-4">
+            Calculer moyenne {year} <br /> {branche}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          {/* Add a Link component to navigate to the branche page */}
+          <Link href={"/" + abbr + "/" + y} passHref legacyBehavior>
             <Button variant="outline-light"> Calculer</Button>
-          </Card.Footer>
-        </Card>
-      </>
-    );
-}
+          </Link>
+        </Card.Footer>
+      </Card>
+    </>
+  );
+};
