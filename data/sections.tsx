@@ -14,7 +14,7 @@ export const sections: Section[] = [
     abbr: "LBC",
     matieres: {
       Y1: {
-        tronccommun: {
+        troncCommun: {
           S1: [
             {
               nom: "algorithmique et structures de données 1",
@@ -431,8 +431,7 @@ export const sections: Section[] = [
       },
     },
   },
-  /*  {
-
+  {
     id: 1,
     section: "Computer Science",
     branches: [
@@ -441,7 +440,406 @@ export const sections: Section[] = [
       "Informatique et Multimédia",
     ],
     abbr: "LCS",
+    matieres: {
+      Y1: {
+        troncCommun: {
+          S1: [
+            {
+              nom: "système d'exploitation 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "systèmes logiques et architecture des ordinateurs",
+              coeff: 2,
+            },
+            {
+              nom: "technologies multimédias",
+              coeff: 1.5,
+            },
+            {
+              nom: "logique formelle",
+              coeff: 1.5,
+            },
+            {
+              nom: "algorithmique et structure de données",
+              coeff: 2,
+            },
+            {
+              nom: "atelier programmation 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "analyse 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "algèbre 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "techniques de communication 1",
+              coeff: 1,
+            },
+            {
+              nom: "anglais 1",
+              coeff: 1,
+            },
+          ],
+          S2: [
+            {
+              nom: "analyse 2",
+              coeff: 1.5,
+            },
+            {
+              nom: "algèbre 2",
+              coeff: 1.5,
+            },
+            {
+              nom: "fondements des bases de données",
+              coeff: 2,
+            },
+            {
+              nom: "fondements des réseaux",
+              coeff: 2,
+            },
+            {
+              nom: "systéme d'exploitation 2",
+              coeff: 1.5,
+            },
+            {
+              nom: "programmation python",
+              coeff: 1,
+            },
+            {
+              nom: "algorithmique ,structure de données et complexité",
+              coeff: 1.5,
+            },
+            {
+              nom: "atelier de programmation 2",
+              coeff: 1,
+            },
+            {
+              nom: "culture et compétences numériques",
+              coeff: 1,
+            },
+            {
+              nom: "techniques de communication 2",
+              coeff: 1,
+            },
+            {
+              nom: "anglais 2",
+              coeff: 1,
+            },
+          ],
+        },
+      },
+      Y2: {
+        GLSI: {
+          S3: [
+            {
+              nom: "Probabilité et statistique",
+              coeff: 2,
+            },
+            {
+              nom: "Graphes et optimisation",
+              coeff: 1,
+            },
+            {
+              nom: "Théorie des langages des Automates",
+              coeff: 1,
+            },
+            {
+              nom: "Ingénierie des bases de données",
+              coeff: 1.5,
+            },
+            {
+              nom: "Services des réseaux",
+              coeff: 1,
+            },
+            {
+              nom: "Conception des systémes d'information",
+              coeff: 1.5,
+            },
+            {
+              nom: "Programmation Java",
+              coeff: 2,
+            },
+            {
+              nom: "Gestion d'entreprise",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 3",
+              coeff: 1,
+            },
+            {
+              nom: "Framework de développement",
+              coeff: 1.5,
+            },
+            {
+              nom: "Technique d'infographie",
+              coeff: 1.5,
+            },
+          ],
+          S4: [
+            {
+              nom: "Tests de logiciels (certification ISTQB)",
+              coeff: 1,
+            },
+            {
+              nom: "Techniques de compilation",
+              coeff: 1.5,
+            },
+            {
+              nom: "Technologies et programmation web",
+              coeff: 1.5,
+            },
+            {
+              nom: "Techniques d'indexation",
+              coeff: 1,
+            },
+            {
+              nom: "Administration des bases de données",
+              coeff: 1,
+            },
+            {
+              nom: "Entrepôts de données",
+              coeff: 1,
+            },
+            {
+              nom: "Fondements de l'intelligence artificielle (programmation IA)",
+              coeff: 2,
+            },
+            {
+              nom: "Projet fedéré (methode Agile)",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 4 ",
+              coeff: 1,
+            },
+            {
+              nom: "Droit d'informatique,protection des données et éthique",
+              coeff: 1,
+            },
+            {
+              nom: "Programmation Python avancée",
+              coeff: 1.5,
+            },
+            {
+              nom: "Introduction à l'IoT",
+              coeff: 1.5,
+            },
+          ],
+        },
+        IM: {
+          S3: [
+            {
+              nom: "Théorie des languages et des Automates",
+              coeff: 1,
+            },
+            {
+              nom: "Graphes et optimisation",
+              coeff: 1,
+            },
+            {
+              nom: "Probabilité et statistique",
+              coeff: 2,
+            },
+            {
+              nom: "Services des réseaux",
+              coeff: 1,
+            },
+            {
+              nom: "Ingénierie des bases de données",
+              coeff: 1.5,
+            },
+            {
+              nom: "Conception des systèmes d'information",
+              coeff: 1.5,
+            },
+            {
+              nom: "Programmation JAVA",
+              coeff: 2,
+            },
+            {
+              nom: "Anglais 3",
+              coeff: 1,
+            },
+            {
+              nom: "Gestion d'entreprise",
+              coeff: 1,
+            },
+            {
+              nom: "Framework de développement",
+              coeff: 1.5,
+            },
+            {
+              nom: "Technique d'infographie",
+              coeff: 1.5,
+            },
+          ],
+          S4: [
+            {
+              nom: "Tests de logiciels (certification ISTQB)",
+              coeff: 1,
+            },
+            {
+              nom: "Fondements & Programmation",
+              coeff: 1.5,
+            },
+            {
+              nom: "Technologies et programmation",
+              coeff: 1.5,
+            },
+            {
+              nom: "Développement d'applications mobiles",
+              coeff: 1.5,
+            },
+            {
+              nom: "Infographie",
+              coeff: 1,
+            },
+            {
+              nom: "Traitement d'images",
+              coeff: 1.5,
+            },
+            {
+              nom: "Numérisation et codage des objets Multimédia",
+              coeff: 1,
+            },
+            {
+              nom: "Droit informatique,protection des donnnées et éthique",
+              coeff: 1,
+            },
+            {
+              nom: "Projet féderé (méthode Agile)",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 4",
+              coeff: 1,
+            },
+            {
+              nom: "Technique Audio visuelles 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "Montage Vidéo",
+              coeff: 1.5,
+            },
+          ],
+        },
+      },
+      Y3: {
+        GLSI: {
+          S5: [
+            {
+              nom: "Développement d'applications réparties ",
+              coeff: 1.5,
+            },
+            {
+              nom: "Développement Mobile",
+              coeff: 1,
+            },
+            {
+              nom: "Machine Learning",
+              coeff: 1,
+            },
+            {
+              nom: "Sécurité informatique",
+              coeff: 1,
+            },
+            {
+              nom: "Architecture SOA et service Web",
+              coeff: 2,
+            },
+            {
+              nom: "Virtualisation et Cloud",
+              coeff: 1.5,
+            },
+            {
+              nom: "Framework et techniques Big Data",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à l'environement professionnel",
+              coeff: 1,
+            },
+            {
+              nom: "Entreprenariat",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 5",
+              coeff: 1,
+            },
+            {
+              nom: "IoT:Applications et Plates formes",
+              coeff: 1.5,
+            },
+            {
+              nom: "Analyse des données avec le langage R",
+              coeff: 1.5,
+            },
+          ],
+        },
+        IM: {
+          S5: [
+            {
+              nom: "Développement d'applications Web et multimédia",
+              coeff: 2,
+            },
+            {
+              nom: "Maillage 2D/3D",
+              coeff: 1,
+            },
+            {
+              nom: "Réalité Virtuelle et réalité augmentée",
+              coeff: 1,
+            },
+            {
+              nom: "Techniques d'indexation et de référencement",
+              coeff: 1.5,
+            },
+            {
+              nom: "Architecture SOA et service Web",
+              coeff: 1.5,
+            },
+            {
+              nom: "Framework & Technologies Big Data",
+              coeff: 1,
+            },
+            {
+              nom: "Virtualisation et Cloud",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 5",
+              coeff: 1,
+            },
+            {
+              nom: "Entreprenariat",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à l'environnement professionnel",
+              coeff: 1,
+            },
+            {
+              nom: "Effets Spéciaux",
+              coeff: 1.5,
+            },
+            {
+              nom: "Techniques Audiovisuelles avancées",
+              coeff: 1.5,
+            },
+          ],
+        },
+      },
+    },
   },
+  /*
   {
     id: 2,
     section: "Computer Engineering",
