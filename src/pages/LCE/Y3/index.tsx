@@ -3,7 +3,7 @@ import SecondYear from "@/components/SecondYear"
 export default ()=>{
     return (
       <div>
-        <SecondYear parcours={["GLSI", "IM"]} abbr="LBC" />
+        <SecondYear parcours={["SE&IOT", "IRS"]} abbr="LCE" />
       </div>
     );
 }
