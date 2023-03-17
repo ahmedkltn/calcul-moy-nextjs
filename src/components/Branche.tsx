@@ -25,7 +25,9 @@ export default ({ parcours, abbr, year }: Props) => {
               <Card.Header className="display-6">{parcour}</Card.Header>
               <Card.Body>
                 {/* Display the path name */}
-                <Card.Text className="p-4">Calculer moyenne {parcour}</Card.Text>
+                <Card.Text >
+                  Calculer moyenne<br /> <b>{parcour}</b>
+                </Card.Text>
               </Card.Body>
               <Card.Footer>
                 {/* Add a Link component to navigate to the path page */}

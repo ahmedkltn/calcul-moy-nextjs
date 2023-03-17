@@ -35,8 +35,9 @@ export default ({ year, section, branches, y, abbr }: Props) => {
         <Card.Header className="display-6">{year}</Card.Header>
         <Card.Body>
           {/* Display the branch and year */}
-          <Card.Text className="p-4">
-            Calculer moyenne {year} <br /> {branche}
+          <Card.Text>
+            Calculer moyenne {year}
+            <br /> <b>{branche}</b>
           </Card.Text>
         </Card.Body>
         <Card.Footer>

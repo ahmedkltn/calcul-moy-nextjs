@@ -1,4 +1,10 @@
-// sections for navbar
+/*
+    id: The ID of the section.
+    section: section name,
+    branches: An array of possible branches that students can choose from within section.
+    abbr: An abbreviation for the course.
+    matieres: An object containing the courses for each year of the program, divided by branch.
+*/
 export type Section = {
   id : number;
   section : string;
@@ -839,7 +845,6 @@ export const sections: Section[] = [
       },
     },
   },
-  /*
   {
     id: 2,
     section: "Computer Engineering",
@@ -849,6 +854,407 @@ export const sections: Section[] = [
       "Systèmes embarqués et IoT",
     ],
     abbr: "LCE",
+    matieres: {
+      Y1: {
+        troncCommun: {
+          S1: [
+            {
+              nom: "système d'exploitation 1",
+              coeff: 2,
+            },
+            {
+              nom: "systémes logiques",
+              coeff: 1.5,
+            },
+            {
+              nom: "électricité -électronique",
+              coeff: 2,
+            },
+            {
+              nom: "propagation et rayonnement",
+              coeff: 1,
+            },
+            {
+              nom: "analyse 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "algébre 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "atelier programmation 1",
+              coeff: 1.5,
+            },
+            {
+              nom: "algorithmique et structures de données",
+              coeff: 2,
+            },
+            {
+              nom: "anglais 1",
+              coeff: 1,
+            },
+            {
+              nom: "techniques de communication 1",
+              coeff: 1,
+            },
+          ],
+          S2: [
+            {
+              nom: "initiation au traitement du signal",
+              coeff: 1,
+            },
+            {
+              nom: "fonctions électroniques",
+              coeff: 1,
+            },
+            {
+              nom: "algorithmique ,structures des données",
+              coeff: 2,
+            },
+            {
+              nom: "atelier programmation 2",
+              coeff: 1,
+            },
+            {
+              nom: "transmission de données",
+              coeff: 1,
+            },
+            {
+              nom: "architecture des ordinateurs",
+              coeff: 2,
+            },
+            {
+              nom: "systémes d'exploitation 2",
+              coeff: 2,
+            },
+            {
+              nom: "analyse 2",
+              coeff: 1,
+            },
+            {
+              nom: "algébre 2",
+              coeff: 1,
+            },
+            {
+              nom: "culture et compétences numériques",
+              coeff: 1,
+            },
+            {
+              nom: "anglais 2",
+              coeff: 1,
+            },
+            {
+              nom: "techniques de communication 2",
+              coeff: 1,
+            },
+          ],
+        },
+      },
+      Y2: {
+        SEIOT: {
+          S3: [
+            {
+              nom: "Technologies Multémidia",
+              coeff: 1,
+            },
+            {
+              nom: "Réseaux locaux et industriels",
+              coeff: 2,
+            },
+            {
+              nom: "Probabilité statistique",
+              coeff: 1,
+            },
+            {
+              nom: "Graphes et optimisation",
+              coeff: 1,
+            },
+            {
+              nom: "Méthodologie de conception de logiciel",
+              coeff: 1,
+            },
+            {
+              nom: "Fondements des bases de données",
+              coeff: 1,
+            },
+            {
+              nom: "Programmation on python",
+              coeff: 1.5,
+            },
+            {
+              nom: "Programmation orientée objet",
+              coeff: 1.5,
+            },
+            {
+              nom: "Culture d'entreprise",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 3",
+              coeff: 1,
+            },
+          ],
+          S4: [
+            {
+              nom: "Conception des circuits logiques & synthése VHDL",
+              coeff: 1.5,
+            },
+            {
+              nom: "Systéme sur puce (SoC)& Technologies d'interfaçage",
+              coeff: 2,
+            },
+            {
+              nom: "Développement Mobile",
+              coeff: 1.5,
+            },
+            {
+              nom: "Programmation on web",
+              coeff: 1.5,
+            },
+            {
+              nom: "Test logiciel ( Certification ISTQB)",
+              coeff: 1,
+            },
+            {
+              nom: "Sécurité informatique",
+              coeff: 1,
+            },
+            {
+              nom: "Projet fédéré (méthode argile)",
+              coeff: 1.5,
+            },
+            {
+              nom: "anglais 4",
+              coeff: 1,
+            },
+            {
+              nom: "Droit informatique ,protection des données et éthique",
+              coeff: 1,
+            },
+          ],
+        },
+        IRS: {
+          S3: [
+            {
+              nom: "Graphes et optimisation",
+              coeff: 1,
+            },
+            {
+              nom: "Probabilités statistique",
+              coeff: 1,
+            },
+            {
+              nom: "Technologies Multimédia",
+              coeff: 1,
+            },
+            {
+              nom: "Réseaux locaux et industriels",
+              coeff: 2,
+            },
+            {
+              nom: "Fondements des bases de données",
+              coeff: 1,
+            },
+            {
+              nom: "Méthodologie de conception de logiciel",
+              coeff: 1,
+            },
+            {
+              nom: "Programmation orientée objet",
+              coeff: 1.5,
+            },
+            {
+              nom: "Programmation on python",
+              coeff: 1.5,
+            },
+            {
+              nom: "Anglais 3",
+              coeff: 1,
+            },
+            {
+              nom: "Gestion d'entreprise",
+              coeff: 1,
+            },
+            {
+              nom: "Initiation au développement loT et Embarqué",
+              coeff: 1.5,
+            },
+            {
+              nom: "Introduction à la certification CCNA1",
+              coeff: 1.5,
+            },
+            {
+              nom: "Initiation au développement loT et Embarqué",
+              coeff: 1.5,
+            },
+          ],
+          S4: [
+            {
+              nom: "Sécurité informatique",
+              coeff: 1,
+            },
+            {
+              nom: "Infrastructure Data Center",
+              coeff: 1,
+            },
+            {
+              nom: "Administration des réseaux",
+              coeff: 1,
+            },
+            {
+              nom: "Administration systémes windows",
+              coeff: 1,
+            },
+            {
+              nom: "Administration systémes Unix",
+              coeff: 1,
+            },
+            {
+              nom: "Réseaux IP",
+              coeff: 2,
+            },
+            {
+              nom: "Architecture SAO et web service",
+              coeff: 1,
+            },
+            {
+              nom: "Ingénierie des bases de données",
+              coeff: 1,
+            },
+            {
+              nom: "Projet fédéré (méthode argile )",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 4",
+              coeff: 1,
+            },
+            {
+              nom: "Droit informatique, protection des données éthique",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à la certification CCNA2",
+              coeff: 1.5,
+            },
+            {
+              nom: "Administration réseaux sous Linux",
+              coeff: 1.5,
+            },
+          ],
+        },
+      },
+      Y3: {
+        SEIOT: {
+          S5: [
+            {
+              nom: "Big data",
+              coeff: 1,
+            },
+            {
+              nom: "IA et Machine learning",
+              coeff: 1.5,
+            },
+            {
+              nom: "Architecture IoT",
+              coeff: 1.5,
+            },
+            {
+              nom: "Sécurité IoT",
+              coeff: 1,
+            },
+            {
+              nom: "Cloud et Virtualisation",
+              coeff: 2,
+            },
+            {
+              nom: "Technologie des réseaux sans fil pour l'IoT",
+              coeff: 1,
+            },
+            {
+              nom: "Conception d'objets connectés",
+              coeff: 1,
+            },
+            {
+              nom: "Systèmes temps réel",
+              coeff: 1,
+            },
+            {
+              nom: "Entreprenariat",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 5",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à l'environnement professionnel",
+              coeff: 1,
+            },
+          ],
+        },
+        IRS: {
+          S5: [
+            {
+              nom: "Virtualisation et conteneur",
+              coeff: 1,
+            },
+            {
+              nom: "Virtualisation des réseaux",
+              coeff: 1,
+            },
+            {
+              nom: "Réseaux multimédia",
+              coeff: 1,
+            },
+            {
+              nom: "Technologies des réseaux sans fil",
+              coeff: 1,
+            },
+            {
+              nom: "Administration des BD",
+              coeff: 1,
+            },
+            {
+              nom: "Test(certification ISTQB)",
+              coeff: 1,
+            },
+            {
+              nom: "Déploiement services Cloud",
+              coeff: 1,
+            },
+            {
+              nom: "IA & Machine Learning",
+              coeff: 1.5,
+            },
+            {
+              nom: "Sécurité des réseaux",
+              coeff: 1,
+            },
+            {
+              nom: "Anglais 5",
+              coeff: 1,
+            },
+            {
+              nom: "Entreprenariat",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à l'environnement professionnel",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à la Certification LIPC2",
+              coeff: 1,
+            },
+            {
+              nom: "Préparation à la Certification CCNA3",
+              coeff: 1.5,
+            },
+          ],
+        },
+      },
+    },
   },
-*/
 ];
