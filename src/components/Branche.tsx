@@ -22,11 +22,14 @@ export default ({ parcours, abbr, year }: Props) => {
               className="text-center "
               style={{ minHeight: "17rem" }}
             >
-              <Card.Header className="display-6">{parcour}</Card.Header>
+              <Card.Header className="display-6">
+                {parcour == "troncCommun" ? "tronc commun" : parcour}
+              </Card.Header>
               <Card.Body>
                 {/* Display the path name */}
-                <Card.Text >
-                  Calculer moyenne<br /> <b>{parcour}</b>
+                <Card.Text>
+                  Calculer moyenne
+                  <br /> <b>{parcour == "troncCommun" ? "tronc commun" : parcour}</b>
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
@@ -36,7 +39,7 @@ export default ({ parcours, abbr, year }: Props) => {
                   passHref
                   legacyBehavior
                 >
-                  <Button variant="outline-light">Calculer</Button>
+                  <Button variant="outline-light">Choisir</Button>
                 </Link>
               </Card.Footer>
             </Card>

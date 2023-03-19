@@ -4,13 +4,6 @@ interface Matiere {
         nom : string;
         coeff : number;
 }
-interface Props {
-    year : string;
-    sectionAbbr:string;
-    branche:string;
-    semestre:string;
-
-}
 interface Matieres {
     [key:string] : {
         [key:string] : {
@@ -18,7 +11,7 @@ interface Matieres {
         }
     }
 }
-export default function getMatieres({sectionAbbr,year,branche,semestre}:Props) : Matiere[] {
+function getMatieres(sectionAbbr : string,year : string,branche : string,semestre :string) : Matiere[] {
     const selectedSection : Section = sections.filter(section => section.abbr == sectionAbbr)[0];
     const selectedYear: Matieres = selectedSection.matieres as Matieres;
     if(selectedYear[year][branche][semestre]){
@@ -28,3 +21,4 @@ export default function getMatieres({sectionAbbr,year,branche,semestre}:Props) :
     return [];
   }
 }
+export default getMatieres;

@@ -1,9 +1,9 @@
-import SecondYear from "@/components/SecondYear"
+import OtherYears from "@/components/OtherYears";
 
 export default ()=>{
-    return(
-        <div>
-            <SecondYear parcours={["SE&IOT","IRS"]} abbr="LCE"/>
-        </div>
-    )
+    return (
+      <div>
+        <OtherYears parcours={["SE&IOT", "IRS"]} abbr="LCE" year="Y3" />
+      </div>
+    );
 }

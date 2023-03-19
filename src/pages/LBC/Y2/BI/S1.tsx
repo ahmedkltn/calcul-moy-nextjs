@@ -1,7 +1,7 @@
 export default ()=>{
-    return(
+    return (
         <div>
-            aa
+            
         </div>
     )
 }

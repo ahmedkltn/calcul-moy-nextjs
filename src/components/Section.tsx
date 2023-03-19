@@ -37,13 +37,13 @@ export default ({ year, section, branches, y, abbr }: Props) => {
           {/* Display the branch and year */}
           <Card.Text>
             Calculer moyenne {year}
-            <br /> <b>{branche}</b>
+            <br /> <b>{branche == "Tronc-commun" ? "tronc commun" : branche}</b>
           </Card.Text>
         </Card.Body>
         <Card.Footer>
           {/* Add a Link component to navigate to the branche page */}
           <Link href={"/" + abbr + "/" + y} passHref legacyBehavior>
-            <Button variant="outline-light"> Calculer</Button>
+            <Button variant="outline-light">Choisir</Button>
           </Link>
         </Card.Footer>
       </Card>
