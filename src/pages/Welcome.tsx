@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import WelcomeMsg from "@/components/WelcomeMsg";
 import { Button } from "react-bootstrap";
 
-export default ()=>{
+const welcome = ()=>{
     return (
       <Container>
         <Row className="justify-content-center">
@@ -15,3 +15,4 @@ export default ()=>{
       </Container>
     );
 }
+export default welcome;

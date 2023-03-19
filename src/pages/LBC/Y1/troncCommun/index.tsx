@@ -1,7 +1,8 @@
 import Semestres from "@/components/Semestres"
 
-export default ()=>{
+const index = ()=>{
   return(
     <Semestres parcour="troncCommun" year="Y1" abbr="LBC"/>
   )
 }
+export default index;

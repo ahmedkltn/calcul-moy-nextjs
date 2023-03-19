@@ -1,8 +1,9 @@
 import Sections from "@/components/Sections";
-export default () => {
+const index =() => {
   return (
     <>
       <Sections sectionSelected="Computer Science" />
     </>
   );
 };
+export default index;

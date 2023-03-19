@@ -1,4 +1,5 @@
 import Matieres from "@/components/Matieres";
-export default () => {
+const S3 = () => {
   return <Matieres sectionAbbr="LCE" year="Y2" branche="SEIOT" semestre="S3" />;
 };
+export default S3;

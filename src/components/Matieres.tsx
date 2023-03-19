@@ -20,8 +20,8 @@ const matieres = ({ sectionAbbr, year, branche, semestre } : Props) => {
         {sectionAbbr} {branche == "troncCommun" ? "tronc commun" : branche} {semestre}:
       </h3>
       <Row className="justify-content-md-center" xs={12} md={4} lg={12}>
-        {matieres.map((matiere) => {
-          return <Matiere Matiere={matiere}></Matiere>;
+        {matieres.map((matiere,i) => {
+          return <Matiere key={i} Matiere={matiere}></Matiere>;
         })}
       </Row>
       <Col className="d-flex justify-content-center mb-4">

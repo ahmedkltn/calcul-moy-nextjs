@@ -1,9 +1,10 @@
 import OtherYears from "@/components/OtherYears";
 
-export default ()=>{
+const index = ()=>{
     return (
       <div>
         <OtherYears parcours={["GLSI", "IM"]} abbr="LCS" year="Y3" />
       </div>
     );
 }
+export default index;

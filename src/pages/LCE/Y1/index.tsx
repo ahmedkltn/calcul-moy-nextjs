@@ -1,9 +1,10 @@
 import YearOne from "@/components/YearOne"
 
-export default ()=>{
+const index =  ()=>{
     return(
         <>
             <YearOne abbr="LCE"/>
         </>
     )
 }
+export default index;

@@ -1,5 +1,6 @@
 import Semestres from "@/components/Semestres";
 
-export default () => {
+const index = () => {
   return <Semestres parcour="IRS" year="Y2" abbr="LCE" />;
 };
+export default index;

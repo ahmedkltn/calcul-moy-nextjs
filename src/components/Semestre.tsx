@@ -17,13 +17,14 @@ const semestre = ({ parcour, abbr, year}: Props) => {
   }
   return (
     <>
-        {semestres.map(semestre =>{
+        {semestres.map((semestre,i) =>{
           return (
             <Col xs={12} lg={4} className="mt-3">
               <Card
                 bg="dark"
                 text="white"
                 className="text-center "
+                key={i}
                 style={{ minHeight: "17rem" }}
               >
                 <Card.Header className="display-6">
