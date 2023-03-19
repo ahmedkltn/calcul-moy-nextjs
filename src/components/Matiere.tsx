@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { Card,Form,InputGroup} from "react-bootstrap";
+import { Card, Form, InputGroup } from "react-bootstrap";
 import styles from "../styles/Matiere.module.css";
 interface typeMatiere {
-    nom:string;
-    coeff:number;
+  nom: string;
+  coeff: number;
 }
 interface Props {
-    Matiere : typeMatiere;
+  Matiere: typeMatiere;
 }
-const matiere = ({Matiere} : Props) => {
-  const [examen,setExamen] = useState(["examen","DS/TP"]);
-  const [value,setValue] = useState("DS/DS");
-  function changeExamen(newValue : string){
-    setValue(newValue)
-    if(value == "DS/DS"){
-      setExamen(["DS1","DS2"])
-    }else if(value == "Examen/DS"){
+const Matiere = ({ Matiere }: Props) => {
+  const [examen, setExamen] = useState(["examen", "DS/TP"]);
+  function useChangeExamen(newValue: string) {
+    if (newValue === "DS/DS") {
+      setExamen(["DS1", "DS2"]);
+    } else if (newValue === "Examen/DS") {
       setExamen(["examen", "DS/TP"]);
     }
   }
@@ -28,24 +26,23 @@ const matiere = ({Matiere} : Props) => {
           <Form.Select
             name="type"
             defaultValue="Examen/DS"
-            onChange={(e) => changeExamen(e.target.value)}
+            onChange={(e) => useChangeExamen(e.target.value)}
           >
             <option value="Examen/DS">Examen / (DS/TP)</option>
             <option value="DS/DS">DS1/DS2</option>
           </Form.Select>
           {}
-          {examen.map((nom,i) => {
+          {examen.map((nom, i) => {
             return (
-              <>
-                <Form.Label key={i}>Note {nom}:</Form.Label>
+              <div key={i}>
+                <Form.Label>Note {nom}:</Form.Label>
                 <Form.Control
                   type="text"
-                  key={i}
                   className={styles.input}
                   name={nom}
                   placeholder={nom}
                 />
-              </>
+              </div>
             );
           })}
           <Form.Label>Autre note :</Form.Label>
@@ -71,4 +68,4 @@ const matiere = ({Matiere} : Props) => {
     </Card>
   );
 };
-export default matiere;
+export default Matiere;

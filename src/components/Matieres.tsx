@@ -12,7 +12,7 @@ interface Matiere {
     nom : string;
     coeff : number;
 }
-const matieres = ({ sectionAbbr, year, branche, semestre } : Props) => {
+const Matieres = ({ sectionAbbr, year, branche, semestre } : Props) => {
   const matieres : Matiere[] = getMatieres(sectionAbbr,year,branche,semestre);
   return (
     <Container fluid>
@@ -30,4 +30,4 @@ const matieres = ({ sectionAbbr, year, branche, semestre } : Props) => {
     </Container>
   );
 };
-export default matieres;
+export default Matieres;

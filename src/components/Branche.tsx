@@ -8,7 +8,7 @@ interface Props {
   year: string; // Year of the path
 }
 
-const branche =  ({ parcours, abbr, year }: Props) => {
+const Branche =  ({ parcours, abbr, year }: Props) => {
   return (
     <>
       {/* Loop through each path in the section */}
@@ -49,4 +49,4 @@ const branche =  ({ parcours, abbr, year }: Props) => {
     </>
   );
 };
-export default branche;
+export default Branche;
