@@ -3,7 +3,7 @@ import OtherYears from "@/components/OtherYears";
 export default ()=>{
     return (
       <div>
-        <OtherYears parcours={["GLSI", "IM"]} abbr="LCE" year="Y3" />
+        <OtherYears parcours={["GLSI", "IM"]} abbr="LCS" year="Y2" />
       </div>
     );
 }

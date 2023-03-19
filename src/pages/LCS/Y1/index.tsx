@@ -3,7 +3,7 @@ import YearOne from "@/components/YearOne"
 export default ()=>{
     return(
         <>
-            <YearOne abbr="LCS"/>
+            <YearOne abbr="LCE"/>
         </>
     )
 }

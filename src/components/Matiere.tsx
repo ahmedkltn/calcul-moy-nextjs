@@ -13,7 +13,7 @@ export default ({Matiere} : Props) => {
       <Card.Header>{Matiere.nom}</Card.Header>
       <Card.Body>calcule</Card.Body>
       <Card.Footer>
-        <Form.Label>Coefficient</Form.Label>
+        <Form.Label>Coefficient Matiere :</Form.Label>
         <Form.Control
           type="text"
           className={styles.input}
