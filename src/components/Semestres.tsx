@@ -6,7 +6,7 @@ interface Props {
   abbr: string;
   year: string;
 }
-export default ({ parcour, year, abbr }: Props) => {
+const semestres =  ({ parcour, year, abbr }: Props) => {
   return (
     <Container fluid>
       <Row className="justify-content-md-center mt-4">
@@ -15,3 +15,4 @@ export default ({ parcour, year, abbr }: Props) => {
     </Container>
   );
 };
+export default semestres;

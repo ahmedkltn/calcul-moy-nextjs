@@ -12,7 +12,7 @@ interface Props {
 }
 
 // Define the component function
-export default ({ year, section, branches, y, abbr }: Props) => {
+const section =  ({ year, section, branches, y, abbr }: Props) => {
   let branche: string;
 
   // Determine the branch based on the year
@@ -50,3 +50,4 @@ export default ({ year, section, branches, y, abbr }: Props) => {
     </>
   );
 };
+export default section;

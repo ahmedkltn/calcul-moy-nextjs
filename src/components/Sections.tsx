@@ -12,7 +12,7 @@ interface Props {
 }
 
 // Define the component function
-export default ({ sectionSelected }: Props) => {
+const Sections =  ({ sectionSelected }: Props) => {
   // Create an array of years for the section
   const years: string[] = ["Première année", "Deuxieme année", "Troisième année"];
 
@@ -48,3 +48,4 @@ export default ({ sectionSelected }: Props) => {
     </Container>
   );
 };
+export default Sections;

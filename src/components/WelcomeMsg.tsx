@@ -1,6 +1,6 @@
 import styles from "../styles/WelcomeMsg.module.css";
 import Image from "next/image";
-export default () =>{
+const welcomeMsg =  () =>{
     return (
       <div className={"text-center mt-4"}>
         <h1 className={styles.text}>Bienvenue !</h1>
@@ -29,3 +29,4 @@ export default () =>{
       </div>
     );
 }
+export default welcomeMsg;

@@ -6,7 +6,7 @@ interface Props {
   abbr: string; 
   year: string;
 }
-export default ({ parcour, abbr, year}: Props) => {
+const semestre = ({ parcour, abbr, year}: Props) => {
   let semestres:string[] = [];
   if(year == "Y1"){
     semestres = ["S1","S2"]
@@ -65,3 +65,4 @@ export default ({ parcour, abbr, year}: Props) => {
     </>
   );
 };
+export default semestre;

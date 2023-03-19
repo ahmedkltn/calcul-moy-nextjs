@@ -3,7 +3,7 @@ import { sections } from "../../data/sections";
 import Link from "next/link";
 import Image from "next/image";
 
-export default () => {
+const navbar =() => {
   return (
     // Create a Navbar component with a dark background color and expand it to medium size
     <Navbar bg="dark" variant="dark" expand="md">
@@ -31,3 +31,4 @@ export default () => {
     </Navbar>
   );
 };
+export default navbar;

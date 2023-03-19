@@ -8,13 +8,13 @@ interface Props {
   year: string; // Year of the path
 }
 
-export default ({ parcours, abbr, year }: Props) => {
+const branche =  ({ parcours, abbr, year }: Props) => {
   return (
     <>
       {/* Loop through each path in the section */}
-      {parcours.map((parcour) => {
+      {parcours.map((parcour,i) => {
         return (
-          <Col xs={12} lg={year == "Y1" ? 12 : 4} className="mt-3">
+          <Col xs={12} lg={year == "Y1" ? 12 : 4} className="mt-3" key={i}>
             {/* Display a card for each path */}
             <Card
               bg="dark"
@@ -49,3 +49,4 @@ export default ({ parcours, abbr, year }: Props) => {
     </>
   );
 };
+export default branche;

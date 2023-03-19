@@ -3,7 +3,7 @@ import Branche from "./Branche"
 interface Props {
     abbr:string;
 }
-export default ({abbr} : Props)=>{
+const yearone =  ({abbr} : Props)=>{
     return (
       <Container fluid>
         <Row className="justify-content-md-center mt-4">
@@ -14,3 +14,4 @@ export default ({abbr} : Props)=>{
       </Container>
     );
 }
+export default yearone;
