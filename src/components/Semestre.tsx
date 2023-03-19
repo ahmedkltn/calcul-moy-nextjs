@@ -6,6 +6,9 @@ interface Props {
   abbr: string; 
   year: string;
 }
+interface semestres {
+  [key:string] : string;
+}
 const semestre = ({ parcour, abbr, year}: Props) => {
   let semestres:string[] = [];
   if(year == "Y1"){
@@ -15,6 +18,7 @@ const semestre = ({ parcour, abbr, year}: Props) => {
   }else{
     semestres = ["S5"]
   }
+  let semestresCorrector : semestres  = {S1:"Semestre 1",S2:"Semestre 2",S3:"Semestre 1",S4:"Semestre 2",S5:"Semestre 1"}
   return (
     <>
         {semestres.map((semestre,i) =>{
@@ -28,15 +32,15 @@ const semestre = ({ parcour, abbr, year}: Props) => {
                 style={{ minHeight: "17rem" }}
               >
                 <Card.Header className="display-6">
-                  {parcour == "troncCommun" ? "tronc commun" : parcour} {semestre}
+                  {parcour == "troncCommun" ? "tronc commun" : parcour}
                 </Card.Header>
                 <Card.Body>
                   {/* Display the path name */}
                   <Card.Text>
                     Calculer moyenne
-                    <br />{" "}
+                    <br />
                     <b>
-                      {parcour == "troncCommun" ? "tronc commun" : parcour} {semestre}
+                      {year.slice(1)}{parcour == "troncCommun" ? "tronc commun" : parcour} {semestresCorrector[semestre]}
                     </b>
                   </Card.Text>
                 </Card.Body>

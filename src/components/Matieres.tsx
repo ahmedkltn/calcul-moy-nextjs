@@ -12,12 +12,22 @@ interface Matiere {
     nom : string;
     coeff : number;
 }
+interface semestres {
+  [key: string]: string;
+}
 const Matieres = ({ sectionAbbr, year, branche, semestre } : Props) => {
   const matieres : Matiere[] = getMatieres(sectionAbbr,year,branche,semestre);
+  let semestresCorrector: semestres = {
+    S1: "Semestre 1",
+    S2: "Semestre 2",
+    S3: "Semestre 1",
+    S4: "Semestre 2",
+    S5: "Semestre 1",
+  };
   return (
     <Container fluid>
       <h3 className={"display-3 " + styles.text}>
-        {sectionAbbr} {branche == "troncCommun" ? "tronc commun" : branche} {semestre}:
+        {year.slice(1)}{sectionAbbr} {branche == "troncCommun" ? "tronc commun" : branche} {semestresCorrector[semestre]}:
       </h3>
       <Row className="justify-content-md-center" xs={12} md={4} lg={12}>
         {matieres.map((matiere,i) => {

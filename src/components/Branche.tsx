@@ -28,7 +28,7 @@ const Branche =  ({ parcours, abbr, year }: Props) => {
               <Card.Body>
                 {/* Display the path name */}
                 <Card.Text>
-                  Calculer moyenne
+                  Calculer moyenne {year.slice(1)}{abbr}
                   <br /> <b>{parcour == "troncCommun" ? "tronc commun" : parcour}</b>
                 </Card.Text>
               </Card.Body>

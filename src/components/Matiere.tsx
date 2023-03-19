@@ -53,7 +53,7 @@ const Matiere = ({ Matiere }: Props) => {
           })}
           <Form.Label>Autre note :</Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             className={styles.input}
             name="aute"
             placeholder={"0"}
