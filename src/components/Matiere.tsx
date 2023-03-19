@@ -8,15 +8,21 @@ interface typeMatiere {
 interface Props {
   Matiere: typeMatiere;
 }
-const Matiere = ({ Matiere }: Props) => {
+function useChangeExamen() {
   const [examen, setExamen] = useState(["examen", "DS/TP"]);
-  function useChangeExamen(newValue: string) {
+
+  function handleChange(newValue: string) {
     if (newValue === "DS/DS") {
       setExamen(["DS1", "DS2"]);
     } else if (newValue === "Examen/DS") {
       setExamen(["examen", "DS/TP"]);
     }
   }
+
+  return { examen, handleChange };
+}
+const Matiere = ({ Matiere }: Props) => {
+  const { examen, handleChange } = useChangeExamen();
   return (
     <Card bg="dark" text="white" className="d-flex mb-2 m-lg-2 m-md-2">
       <Card.Header>{Matiere.nom}</Card.Header>
@@ -26,7 +32,7 @@ const Matiere = ({ Matiere }: Props) => {
           <Form.Select
             name="type"
             defaultValue="Examen/DS"
-            onChange={(e) => useChangeExamen(e.target.value)}
+            onChange={(e) => handleChange(e.target.value)}
           >
             <option value="Examen/DS">Examen / (DS/TP)</option>
             <option value="DS/DS">DS1/DS2</option>
