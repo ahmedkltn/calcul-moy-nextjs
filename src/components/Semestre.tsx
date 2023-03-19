@@ -19,7 +19,7 @@ const semestre = ({ parcour, abbr, year}: Props) => {
     <>
         {semestres.map((semestre,i) =>{
           return (
-            <Col xs={12} lg={4} className="mt-3">
+            <Col xs={12} lg={4} key={i} className="mt-3">
               <Card
                 bg="dark"
                 text="white"
