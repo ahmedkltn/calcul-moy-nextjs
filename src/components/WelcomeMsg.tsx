@@ -9,11 +9,9 @@ const welcomeMsg =  () =>{
           à calculer facilement et efficacement leurs notes grâce à une interface
           conviviale,L'objectif principal de cette application est de simplifier le
           processus de calcul des notes pour les étudiants. <br></br>Choisissez la licence
-          que vous souhaitez calculer dans la barre de navigation du site
-          web.
+          que vous souhaitez calculer dans la barre de navigation du site web.
           <br></br>Ce projet a été réalisé par : <b>Ahmed klabi</b>
         </p>
-
         <a href="https://github.com/ahmedkltn">
           <Image className="m-2" src="/github.png" alt="github" width={50} height={50} />
         </a>
