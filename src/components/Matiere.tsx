@@ -87,8 +87,14 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
     return Number(moy.toFixed(3));
   }
   return (
-    <Card bg="dark" text="white" className="d-flex mb-2 m-lg-2 m-md-2">
-      <Card.Header>{Matiere.nom}</Card.Header>
+    <Card
+      bg="dark"
+      text="white"
+      className="shadow d-flex mt-2 m-lg-2 m-md-2 border-secondary mb-3"
+    >
+      <Card.Header className={styles.text + " border-secondary"}>
+        <b>{Matiere.nom[0].toUpperCase() + Matiere.nom.slice(1)}</b>
+      </Card.Header>
       <Card.Body>
         <Form>
           <Form.Label>Type de notes :</Form.Label>
@@ -144,7 +150,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
                 validateInputValue(e.target.value)
                   ? setNoteAutre(parseFloat(e.target.value))
                   : setNoteAutre(0);
-              }}  
+              }}
               isInvalid={!isValidNoteAutre && isNoteAutre}
               disabled={!isNoteAutre}
             />
@@ -153,14 +159,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
             Si trois notes existent,veuillez écrire la note ici.
           </Form.Text>
           <br></br>
-          <Form.Label>Coefficient Matiere :</Form.Label>
-          <Form.Control
-            type="number"
-            className={styles.input}
-            name="coeff"
-            placeholder={Matiere.coeff.toFixed(2).toString()}
-            disabled
-          />
+          <Form.Label>Coefficient Matiere : {Matiere.coeff} </Form.Label>
         </Form>
       </Card.Body>
       <Card.Footer>

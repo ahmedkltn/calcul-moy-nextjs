@@ -29,7 +29,7 @@ const section =  ({ year, section, branches, y, abbr }: Props) => {
       <Card
         bg="dark"
         text="white"
-        className="text-center "
+        className="text-center shadow"
         style={{ minHeight: "17rem" }}
       >
         <Card.Header className="display-6">{year}</Card.Header>

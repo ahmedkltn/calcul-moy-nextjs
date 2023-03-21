@@ -27,7 +27,7 @@ const semestre = ({ parcour, abbr, year}: Props) => {
               <Card
                 bg="dark"
                 text="white"
-                className="text-center "
+                className="text-center shadow"
                 key={i}
                 style={{ minHeight: "17rem" }}
               >
@@ -40,7 +40,9 @@ const semestre = ({ parcour, abbr, year}: Props) => {
                     Calculer moyenne
                     <br />
                     <b>
-                      {year.slice(1)}{parcour == "troncCommun" ? "tronc commun" : parcour} {semestresCorrector[semestre]}
+                      {year.slice(1)}
+                      {parcour == "troncCommun" ? "tronc commun" : parcour}{" "}
+                      {semestresCorrector[semestre]}
                     </b>
                   </Card.Text>
                 </Card.Body>

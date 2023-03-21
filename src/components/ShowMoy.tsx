@@ -16,7 +16,7 @@
           <Modal.Body>La moyenne est : {moyenne.toFixed(3)}</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
-              Close
+              Fermer
             </Button>
           </Modal.Footer>
         </Modal>
