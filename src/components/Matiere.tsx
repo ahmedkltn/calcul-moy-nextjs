@@ -87,11 +87,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
     return Number(moy.toFixed(3));
   }
   return (
-    <Card
-      bg="dark"
-      text="white"
-      className="shadow d-flex mt-2 m-lg-2 m-md-2 mb-3"
-    >
+    <Card bg="dark" text="white" className="shadow d-flex mt-2 m-lg-2 m-md-2 mb-3">
       <Card.Header className={styles.text + "border-secondary"}>
         <b>{Matiere.nom[0].toUpperCase() + Matiere.nom.slice(1)}</b>
       </Card.Header>
@@ -137,7 +133,16 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
               }}
               isInvalid={!isValidNoteDS}
             />
+            {examen[0] == "DS1" ? (
+              <Form.Text muted>
+                Si la moyenne entre deux DS est écrite, veuillez écrire deux fois dans DS1
+                et DS2.
+              </Form.Text>
+            ) : (
+              ""
+            )}
           </div>
+
           <Form.Label>Autre note :</Form.Label>
           <InputGroup className={"mb-3 " + styles.input}>
             <InputGroup.Checkbox onClick={() => setIsNoteAutre((prev) => !prev)} />
