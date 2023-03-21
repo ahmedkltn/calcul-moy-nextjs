@@ -51,10 +51,13 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
   }
   function calculMoy() {
     let moy: number = 0;
+    let coeffs : number = 0;
     Object.entries(infoMatieres).forEach(([nom, details]: [string, Notes]) => {
       moy += details.moyenne * details.coeff;
+      coeffs += details.coeff;
+
     });
-    moy /= Object.keys(infoMatieres).length;
+    moy /= coeffs;
     return moy;
   }
   return (

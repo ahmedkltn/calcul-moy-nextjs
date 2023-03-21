@@ -16,7 +16,7 @@ interface Notes {
 // Interface for the props passed to the Matiere component
 interface Props {
   Matiere: typeMatiere;
-  setInfoMatieres: (name:string, moyenne: number) => void;
+  setInfoMatieres: (name: string, moyenne: number) => void;
 }
 
 // Custom hook to change the type of exam between "examen" and "DS/TP"
@@ -42,7 +42,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
   const [noteEXDS, setNoteEXDS] = useState<number>(0);
   const [noteDS, setNoteDS] = useState<number>(0);
   const [noteAutre, setNoteAutre] = useState<number>(0);
-  const [isNoteAutre,setIsNoteAutre] = useState<boolean>(false);
+  const [isNoteAutre, setIsNoteAutre] = useState<boolean>(false);
   // Calculate the subject's average based on the current exam type and note values
   const moyenneMatiere = calculMoyenne();
   // update the moy everytime moyenne change
@@ -71,20 +71,20 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
   function calculMoyenne() {
     let moy: number = 0;
     if (examen[0] === "examen") {
-      if(isNoteAutre){
-      moy = noteEXDS * 0.7 + noteDS * 0.2 + noteAutre * 0.1;
-      }else{
-      moy = noteEXDS * 0.7 + noteDS * 0.3;
+      if (isNoteAutre) {
+        moy = noteEXDS * 0.7 + noteDS * 0.2 + noteAutre * 0.1;
+      } else {
+        moy = noteEXDS * 0.7 + noteDS * 0.3;
       }
     } else if (examen[0] === "DS1") {
-      if(isNoteAutre){
-      moy = noteEXDS * 0.4 + noteDS * 0.4 + noteAutre * 0.2;
-      }else{
-      moy = noteEXDS * 0.5 + noteDS * 0.5;
+      if (isNoteAutre) {
+        moy = noteEXDS * 0.4 + noteDS * 0.4 + noteAutre * 0.2;
+      } else {
+        moy = noteEXDS * 0.5 + noteDS * 0.5;
       }
     }
     if (isNaN(moy)) moy = 0;
-    return Number(moy.toFixed(2));
+    return Number(moy.toFixed(3));
   }
   return (
     <Card bg="dark" text="white" className="d-flex mb-2 m-lg-2 m-md-2">
@@ -109,7 +109,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
               placeholder={examen[0]}
               onChange={(e) => {
                 setIsValidNoteEXDS(validateInputValue(e.target.value));
-                isValidNoteEXDS
+                validateInputValue(e.target.value)
                   ? setNoteEXDS(parseFloat(e.target.value))
                   : setNoteEXDS(0);
               }}
@@ -125,7 +125,9 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
               placeholder={examen[1]}
               onChange={(e) => {
                 setIsValidNoteDS(validateInputValue(e.target.value));
-                isValidNoteDS ? setNoteDS(parseFloat(e.target.value)) : setNoteDS(0);
+                validateInputValue(e.target.value)
+                  ? setNoteDS(parseFloat(e.target.value))
+                  : setNoteDS(0);
               }}
               isInvalid={!isValidNoteDS}
             />
@@ -139,10 +141,10 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
               placeholder={"Autre"}
               onChange={(e) => {
                 setIsValidNoteAutre(validateInputValue(e.target.value));
-                isValidNoteAutre
+                validateInputValue(e.target.value)
                   ? setNoteAutre(parseFloat(e.target.value))
                   : setNoteAutre(0);
-              }}
+              }}  
               isInvalid={!isValidNoteAutre}
               disabled={!isNoteAutre}
             />

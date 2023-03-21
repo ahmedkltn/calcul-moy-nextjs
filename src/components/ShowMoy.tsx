@@ -13,7 +13,7 @@
           <Modal.Header closeButton>
             <Modal.Title> Moyenne : </Modal.Title>
           </Modal.Header>
-          <Modal.Body>La moyenne est : {moyenne.toFixed(2)}</Modal.Body>
+          <Modal.Body>La moyenne est : {moyenne.toFixed(3)}</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
