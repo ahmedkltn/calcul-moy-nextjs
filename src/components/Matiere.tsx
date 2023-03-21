@@ -145,7 +145,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
                   ? setNoteAutre(parseFloat(e.target.value))
                   : setNoteAutre(0);
               }}  
-              isInvalid={!isValidNoteAutre}
+              isInvalid={!isValidNoteAutre && isNoteAutre}
               disabled={!isNoteAutre}
             />
           </InputGroup>
