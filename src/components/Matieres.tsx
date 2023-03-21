@@ -3,6 +3,7 @@ import getMatieres from "../../API/getMatieres";
 import Matiere from "./Matiere";
 import styles from "../styles/WelcomeMsg.module.css";
 import { useState, useEffect } from "react";
+import ShowMoy from "./ShowMoy";
 interface Props {
   sectionAbbr: string;
   year: string;
@@ -26,6 +27,7 @@ interface InfoNote {
 
 const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
   const matieres: Matiere[] = getMatieres(sectionAbbr, year, branche, semestre);
+  const [show, setShow] = useState(false);
   let semestresCorrector: semestres = {
     S1: "Semestre 1",
     S2: "Semestre 2",
@@ -56,27 +58,36 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
     return moy;
   }
   return (
-    <Container fluid>
-      <h3 className={"display-3 " + styles.text}>
-        {year.slice(1)}
-        {sectionAbbr} {branche == "troncCommun" ? "tronc commun" : branche}{" "}
-        {semestresCorrector[semestre]}:
-      </h3>
-      <Row className="justify-content-md-center" xs={12} md={4} lg={12}>
-        {matieres.map((matiere, i) => {
-          return (
-            <Matiere
-              key={i}
-              Matiere={matiere}
-              setInfoMatieres={updateInfoMatieres}
-            ></Matiere>
-          );
-        })}
-      </Row>
-      <Col className="d-flex justify-content-center mb-4">
-        <Button variant="secondary">Calculer</Button>
-      </Col>
-    </Container>
+    <>
+      <Container fluid>
+        <h3 className={"display-3 " + styles.text}>
+          {year.slice(1)}
+          {sectionAbbr} {branche == "troncCommun" ? "tronc commun" : branche}{" "}
+          {semestresCorrector[semestre]}:
+        </h3>
+        <Row className="justify-content-md-center" xs={12} md={4} lg={12}>
+          {matieres.map((matiere, i) => {
+            return (
+              <Matiere
+                key={i}
+                Matiere={matiere}
+                setInfoMatieres={updateInfoMatieres}
+              ></Matiere>
+            );
+          })}
+        </Row>
+        <Col className="d-flex justify-content-center mb-4">
+          <Button variant="secondary" onClick={() => setShow(true)}>
+            Calculer
+          </Button>
+        </Col>
+      </Container>
+      <ShowMoy
+        moyenne={moyenne}
+        isCalculClicked={show}
+        handleClose={() => setShow(false)}
+      />
+    </>
   );
 };
 export default Matieres;
