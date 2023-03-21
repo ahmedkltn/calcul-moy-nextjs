@@ -90,7 +90,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
     <Card
       bg="dark"
       text="white"
-      className="shadow d-flex mt-2 m-lg-2 m-md-2 border-secondary mb-3"
+      className="shadow d-flex mt-2 m-lg-2 m-md-2 mb-3"
     >
       <Card.Header className={styles.text + " border-secondary"}>
         <b>{Matiere.nom[0].toUpperCase() + Matiere.nom.slice(1)}</b>
