@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Calcul Moyenne</title>
+        <title>Calcul Moy ISIMA</title>
       </Head>
       <Navbar></Navbar>
       <Component {...pageProps} />
