@@ -159,8 +159,8 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
             className={styles.input}
             name="coeff"
             placeholder={Matiere.coeff.toFixed(2).toString()}
+            disabled
           />
-          <Form.Text muted>modifier le coefficient s'il est incorrect.</Form.Text>
         </Form>
       </Card.Body>
       <Card.Footer>
