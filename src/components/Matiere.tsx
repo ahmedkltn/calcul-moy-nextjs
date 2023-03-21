@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Card, Form, Alert } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Card, Form, InputGroup } from "react-bootstrap";
 import styles from "../styles/Matiere.module.css";
 
 // Interface for a subject, containing its name and coefficient
@@ -9,15 +9,14 @@ interface typeMatiere {
 }
 
 // Interface for notes, containing the average and coefficient
-interface notes {
+interface Notes {
   moyenne: number;
   coeff: number;
 }
-
 // Interface for the props passed to the Matiere component
 interface Props {
   Matiere: typeMatiere;
-  noteMatieres: notes[];
+  setInfoMatieres: (name:string, moyenne: number) => void;
 }
 
 // Custom hook to change the type of exam between "examen" and "DS/TP"
@@ -36,27 +35,24 @@ function useChangeExamen() {
   // Return the current exam type and the handleChange function to update it
   return { examen, handleChange };
 }
-
 // Main component for a single subject
-const Matiere = ({ Matiere, noteMatieres }: Props) => {
+const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
   const { examen, handleChange } = useChangeExamen();
-
   // State for each type of note (examen, DS/TP, and other)
   const [noteEXDS, setNoteEXDS] = useState<number>(0);
   const [noteDS, setNoteDS] = useState<number>(0);
   const [noteAutre, setNoteAutre] = useState<number>(0);
-
-  // State for displaying error messages when input values are invalid
-  const [errorMessage, setErrorMessage] = useState("");
-
+  const [isNoteAutre,setIsNoteAutre] = useState<boolean>(false);
   // Calculate the subject's average based on the current exam type and note values
   const moyenneMatiere = calculMoyenne();
-
+  // update the moy everytime moyenne change
+  useEffect(() => {
+    setInfoMatieres(Matiere.nom, moyenneMatiere);
+  }, [moyenneMatiere]);
   // States to validate whether the input values are valid
   const [isValidNoteEXDS, setIsValidNoteEXDS] = useState(true);
   const [isValidNoteDS, setIsValidNoteDS] = useState(true);
   const [isValidNoteAutre, setIsValidNoteAutre] = useState(true);
-
   // Function to validate an input value, returning a boolean indicating whether it's valid or not
   function validateInputValue(value: string) {
     const parsedValue = parseFloat(value);
@@ -66,24 +62,29 @@ const Matiere = ({ Matiere, noteMatieres }: Props) => {
       parsedValue < 0 ||
       parsedValue > 20
     ) {
-      setErrorMessage("Please enter a number between 0 and 20");
       return false;
     } else {
-      setErrorMessage("");
       return true;
     }
   }
-
   // Function to calculate the subject's average based on the current exam type and note values
   function calculMoyenne() {
     let moy: number = 0;
     if (examen[0] === "examen") {
+      if(isNoteAutre){
+      moy = noteEXDS * 0.7 + noteDS * 0.2 + noteAutre * 0.1;
+      }else{
       moy = noteEXDS * 0.7 + noteDS * 0.3;
+      }
     } else if (examen[0] === "DS1") {
+      if(isNoteAutre){
+      moy = noteEXDS * 0.4 + noteDS * 0.4 + noteAutre * 0.2;
+      }else{
       moy = noteEXDS * 0.5 + noteDS * 0.5;
+      }
     }
     if (isNaN(moy)) moy = 0;
-    return moy;
+    return Number(moy.toFixed(2));
   }
   return (
     <Card bg="dark" text="white" className="d-flex mb-2 m-lg-2 m-md-2">
@@ -130,19 +131,22 @@ const Matiere = ({ Matiere, noteMatieres }: Props) => {
             />
           </div>
           <Form.Label>Autre note :</Form.Label>
-          <Form.Control
-            type="number"
-            className={styles.input}
-            name="aute"
-            placeholder={"Autre"}
-            onChange={(e) => {
-              setIsValidNoteAutre(validateInputValue(e.target.value));
-              isValidNoteAutre
-                ? setNoteAutre(parseFloat(e.target.value))
-                : setNoteAutre(0);
-            }}
-            isInvalid={!isValidNoteAutre}
-          />
+          <InputGroup className={"mb-3 " + styles.input}>
+            <InputGroup.Checkbox onClick={() => setIsNoteAutre((prev) => !prev)} />
+            <Form.Control
+              type="number"
+              name="autre"
+              placeholder={"Autre"}
+              onChange={(e) => {
+                setIsValidNoteAutre(validateInputValue(e.target.value));
+                isValidNoteAutre
+                  ? setNoteAutre(parseFloat(e.target.value))
+                  : setNoteAutre(0);
+              }}
+              isInvalid={!isValidNoteAutre}
+              disabled={!isNoteAutre}
+            />
+          </InputGroup>
           <Form.Text muted>
             Si trois notes existent,veuillez écrire la note ici.
           </Form.Text>
@@ -154,7 +158,7 @@ const Matiere = ({ Matiere, noteMatieres }: Props) => {
             name="coeff"
             placeholder={Matiere.coeff.toFixed(2).toString()}
           />
-          <Form.Text muted>Tu peux modifie le coefficient si il est incorrect</Form.Text>
+          <Form.Text muted>modifier le coefficient s'il est incorrect.</Form.Text>
         </Form>
       </Card.Body>
       <Card.Footer>
