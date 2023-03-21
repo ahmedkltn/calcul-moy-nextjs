@@ -4,6 +4,7 @@ import Matiere from "./Matiere";
 import styles from "../styles/WelcomeMsg.module.css";
 import { useState, useEffect } from "react";
 import ShowMoy from "./ShowMoy";
+// Define the interfaces for the component's props and other data types
 interface Props {
   sectionAbbr: string;
   year: string;
@@ -24,10 +25,12 @@ interface Notes {
 interface InfoNote {
   [key: string]: Notes;
 }
-
+// Define the Matieres component
 const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
+  // Call the function to get list of courses for the given semester and branch
   const matieres: Matiere[] = getMatieres(sectionAbbr, year, branche, semestre);
-  const [show, setShow] = useState(false);
+  // Define state variables
+  const [show, setShow] = useState(false); // used to show/hide the modal dialog
   let semestresCorrector: semestres = {
     S1: "Semestre 1",
     S2: "Semestre 2",
@@ -37,29 +40,33 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
   };
   const [infoMatieres, setInfoMatieres] = useState<InfoNote>(
     matieres.reduce((acc, matiere) => {
+      // initialize the infoMatieres state variable as an object with default values for each course
       return { ...acc, [matiere.nom]: { moyenne: 0, coeff: matiere.coeff } };
     }, {})
   );
-  const [moyenne,setMoyenne] = useState<Number>(0);
-  useEffect(()=>{
-    setMoyenne(calculMoy())
-  },[infoMatieres])
+  const [moyenne, setMoyenne] = useState<Number>(0);
+  // Define a useEffect hook to update the average when infoMatieres changes
+  useEffect(() => {
+    setMoyenne(calculMoy());
+  }, [infoMatieres]);
+  // Define function to update the state variables
   function updateInfoMatieres(nom: string, moyenneMatiere: number): void {
     setInfoMatieres((prev) => {
       return { ...prev, [nom]: { ...prev[nom], moyenne: moyenneMatiere } };
     });
   }
+  // Calculate the average :
   function calculMoy() {
     let moy: number = 0;
-    let coeffs : number = 0;
+    let coeffs: number = 0;
     Object.entries(infoMatieres).forEach(([nom, details]: [string, Notes]) => {
       moy += details.moyenne * details.coeff;
       coeffs += details.coeff;
-
     });
     moy /= coeffs;
     return moy;
   }
+  // Return the JSX for the component
   return (
     <>
       <Container fluid>
