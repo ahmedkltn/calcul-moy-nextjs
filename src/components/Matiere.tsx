@@ -104,7 +104,8 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
           </Form.Select>
           <div>
             <Form.Label>
-              Note {examen[0]} ({examen[0] == "examen" ? "70%" : isNoteAutre && "40%" || "50%"})
+              Note {examen[0]} (
+              {examen[0] == "examen" ? "70%" : (isNoteAutre && "40%") || "50%"}) :
             </Form.Label>
             <Form.Control
               type="number"
@@ -122,8 +123,14 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
           </div>
           <div>
             <Form.Label>
-              Note {examen[1]} ({examen[0] == "examen" && !isNoteAutre ? "30%" : examen[0] == "examen" && "20%"}
-              {examen[0] != "examen" && !isNoteAutre ? "50%" : examen[0]!="examen" && "40%"}):
+              Note {examen[1]} (
+              {examen[0] == "examen" && !isNoteAutre
+                ? "30%"
+                : examen[0] == "examen" && "20%"}
+              {examen[0] != "examen" && !isNoteAutre
+                ? "50%"
+                : examen[0] != "examen" && "40%"}
+              ) :
             </Form.Label>
             <Form.Control
               type="number"
@@ -148,7 +155,10 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
             )}
           </div>
 
-          <Form.Label>Autre note {examen[0] == "examen" && isNoteAutre  ? "(10%)" : isNoteAutre && "(20%)"}:</Form.Label>
+          <Form.Label>
+            Autre note{" "}
+            {examen[0] == "examen" && isNoteAutre ? "(10%)" : isNoteAutre && "(20%)"} :
+          </Form.Label>
           <InputGroup className={"mb-3 " + styles.input}>
             <InputGroup.Checkbox onClick={() => setIsNoteAutre((prev) => !prev)} />
             <Form.Control
