@@ -1,6 +1,6 @@
 import { Card, Button, Col } from "react-bootstrap";
 import Link from "next/link";
-
+import styles from "../styles/Section.module.css";
 interface Props {
   parcour: string; 
   abbr: string; 
@@ -31,18 +31,21 @@ const semestre = ({ parcour, abbr, year}: Props) => {
                 key={i}
                 style={{ minHeight: "17rem" }}
               >
-                <Card.Header className="display-6">
-                  {parcour == "troncCommun" ? "tronc commun" : parcour}
+                <Card.Header className={"display-6 border-secondary " + styles.text}>
+                  {semestresCorrector[semestre]}
                 </Card.Header>
                 <Card.Body>
                   {/* Display the path name */}
                   <Card.Text>
                     Calculer moyenne
                     <br />
+                    {parcour == "troncCommun" ? "tronc commun" : parcour}
                     <b>
-                      {year.slice(1)}
-                      {parcour == "troncCommun" ? "tronc commun" : parcour}{" "}
-                      {semestresCorrector[semestre]}
+                      {" "}
+                      {semestresCorrector[semestre].split("")[0] +
+                        semestresCorrector[semestre].split("")[
+                          semestresCorrector[semestre].length - 1
+                        ]}
                     </b>
                   </Card.Text>
                 </Card.Body>

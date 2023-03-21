@@ -22,7 +22,7 @@ const Branche =  ({ parcours, abbr, year }: Props) => {
               className="text-center shadow"
               style={{ minHeight: "17rem" }}
             >
-              <Card.Header className="display-6">
+              <Card.Header className={"display-6 border-secondary " + styles.text}>
                 {parcour == "troncCommun" ? "tronc commun" : parcour}
               </Card.Header>
               <Card.Body>
