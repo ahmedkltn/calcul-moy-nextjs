@@ -3,7 +3,7 @@ import "../styles/style.css";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import type { AppProps } from "next/app";
-
+import { Analytics } from "@vercel/analytics/react";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar></Navbar>
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
