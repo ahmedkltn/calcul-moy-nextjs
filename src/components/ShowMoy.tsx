@@ -16,7 +16,7 @@ const ShowMoy = ({ moyenne, isCalculClicked, handleClose , nombreMatiere , nombr
           <Modal.Title> Moyenne : </Modal.Title>
         </Modal.Header>
         <Modal.Body >
-          La moyenne est : {isNaN(moyenne) ? (0).toFixed(3) : moyenne.toFixed(3)}
+          La moyenne est : {isNaN(moyenne) || !moyenne ? (0).toFixed(3) : moyenne.toFixed(3)}
           <br />
           Nombre matieres calculer: {nombreMatiere}/{nombreTotalMatiere}
           </Modal.Body>
