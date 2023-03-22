@@ -93,6 +93,11 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
       </Card.Header>
       <Card.Body>
         <Form>
+          <Form.Text muted>
+            En laissant les chants vides ou 0, la matiere ne seras pas prises en compte dans la
+            moyenne générale
+          </Form.Text>
+          <br></br>
           <Form.Label>Type de notes :</Form.Label>
           <Form.Select
             name="type"
@@ -147,11 +152,13 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
             />
             {examen[0] == "DS1" ? (
               <Form.Text muted>
-                Si la moyenne entre deux DS est écrite, veuillez écrire deux fois dans DS1
-                et DS2.
+                Si la moyenne entre deux DS est donnée, veuillez la recopier deux fois
+                dans DS1 et DS2.
               </Form.Text>
             ) : (
-              ""
+              <>
+                <br /><br />
+              </>
             )}
           </div>
 
@@ -159,7 +166,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
             Autre note{" "}
             {examen[0] == "examen" && isNoteAutre ? "(10%)" : isNoteAutre && "(20%)"} :
           </Form.Label>
-          <InputGroup className={"mb-3 " + styles.input}>
+          <InputGroup className={"mb-1 " + styles.input}>
             <InputGroup.Checkbox onClick={() => setIsNoteAutre((prev) => !prev)} />
             <Form.Control
               type="number"

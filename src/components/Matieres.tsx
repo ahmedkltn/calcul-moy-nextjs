@@ -44,10 +44,12 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
       return { ...acc, [matiere.nom]: { moyenne: 0, coeff: matiere.coeff } };
     }, {})
   );
-  const [moyenne, setMoyenne] = useState<Number>(0);
+  const [moyenne, setMoyenne] = useState<number>(0);
+  const [nombreMatiere,setNombreMatiere] = useState<number>(0);
   // Define a useEffect hook to update the average when infoMatieres changes
   useEffect(() => {
-    setMoyenne(calculMoy());
+    setMoyenne(calculMoy()[0]);
+    setNombreMatiere(calculMoy()[1])
   }, [infoMatieres]);
   // Define function to update the state variables
   function updateInfoMatieres(nom: string, moyenneMatiere: number): void {
@@ -56,15 +58,19 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
     });
   }
   // Calculate the average :
-  function calculMoy() {
+  function calculMoy() : [number,number] {
     let moy: number = 0;
     let coeffs: number = 0;
+    let countMatiere : number = 0;
     Object.entries(infoMatieres).forEach(([nom, details]: [string, Notes]) => {
-      moy += details.moyenne * details.coeff;
-      coeffs += details.coeff;
+      if (details.moyenne) {
+        moy += details.moyenne * details.coeff;
+        coeffs += details.coeff;
+        countMatiere +=1;
+      }
     });
     moy /= coeffs;
-    return moy;
+    return [moy,countMatiere];
   }
   // Return the JSX for the component
   return (
@@ -96,6 +102,8 @@ const Matieres = ({ sectionAbbr, year, branche, semestre }: Props) => {
         moyenne={moyenne}
         isCalculClicked={show}
         handleClose={() => setShow(false)}
+        nombreMatiere = {nombreMatiere}
+        nombreTotalMatiere = {matieres.length}
       />
     </>
   );
