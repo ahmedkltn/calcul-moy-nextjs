@@ -88,7 +88,7 @@ const Matiere = ({ Matiere, setInfoMatieres }: Props) => {
   }
   return (
     <Card bg="dark" text="white" className="shadow d-flex mt-2 m-lg-2 m-md-2 mb-3">
-      <Card.Header className={styles.text + "border-secondary"}>
+      <Card.Header className={styles.text + " border-secondary"}>
         <b>{Matiere.nom[0].toUpperCase() + Matiere.nom.slice(1)}</b>
       </Card.Header>
       <Card.Body>
