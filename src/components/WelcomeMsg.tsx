@@ -17,15 +17,6 @@ const welcomeMsg = () => {
       <a href="https://github.com/ahmedkltn">
         <Image className="m-2" src="/github.png" alt="github" width={50} height={50} />
       </a>
-      <a href="https://www.linkedin.com/in/ahmed-klabi-168265217/">
-        <Image
-          className="m-2"
-          src="/linkedin.png"
-          alt="linkedin"
-          width={50}
-          height={50}
-        />
-      </a>
       <Col className="d-flex justify-content-center mb-4">
         <Link href={"LBC"} passHref legacyBehavior>
           <Button className="m-2" variant="secondary">
